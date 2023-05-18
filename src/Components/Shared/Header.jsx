@@ -17,10 +17,11 @@ const Header = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 flex gap-5">
-                    <Link className='nav-links' to="/home">Home</Link>
+                    <Link className='nav-links' to="/">Home</Link>
                     <Link className='nav-links' to="/allToys">All Toys</Link>
                     <Link className='nav-links' to="/myToys">My Toys</Link>
-                    <Link className='nav-links' to="/addToys">Add Toys</Link>
+                    <Link className='nav-links' to="/addToys">Add A Toy</Link>
+                    <Link className='nav-links' to="/blogs">Blogs</Link>
                 </ul>
             </div>
             <div className="navbar-end">
