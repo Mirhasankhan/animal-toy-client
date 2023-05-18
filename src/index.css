@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.submit-button{
+    @apply bg-orange-600 text-white py-3 rounded-md font-semibold;
+}
+
