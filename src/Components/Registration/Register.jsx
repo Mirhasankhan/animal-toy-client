@@ -30,6 +30,7 @@ const Register = () => {
             .then(() => { })
             .catch(error => setError(error.message))
     }
+
     return (
         <div className='bg-base-200 py-5'>
             <div className='w-2/5 mx-auto bg-white rounded-md'>
@@ -67,8 +68,9 @@ const Register = () => {
                     <div className='text-center'>
                         <h1>Already have an Account?</h1>
                         <Link className='text-red-500' to="/login">Log in</Link>
-                    </div>
+                    </div>                    
                 </form>
+               
             </div>
         </div>
     );
