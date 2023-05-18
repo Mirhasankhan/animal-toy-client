@@ -6,7 +6,7 @@ export const firebaseProvider = createContext(null)
 
 const Provider = ({children}) => {
     const auth = getAuth(app)
-    const [user, setUser] = useState("null")
+    const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(false)
 
     const googleProvider = new GoogleAuthProvider()
@@ -38,7 +38,8 @@ const Provider = ({children}) => {
         user,
         createUser,
         logIn,
-        googleSignIn
+        googleSignIn,
+        loading
     }
     return (
         <firebaseProvider.Provider value={infos}>
