@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { firebaseProvider } from '../Providers/Provider';
 import { updateProfile } from 'firebase/auth';
+import Swal from 'sweetalert2';
 
 const Register = () => {
     const { createUser } = useContext(firebaseProvider)
@@ -17,18 +18,32 @@ const Register = () => {
             .then(result => {
                 const newUser = result.user;
                 updateUserData(newUser, name, photo)
+                Swal.fire({
+                    icon: 'success',                   
+                    text: 'Account Created Successfully'                  
+                })
             })
-            .catch(erro => console.log(erro))
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',                   
+                    text: `${error.message}`,
+                    
+                })
+            })
     }
 
     const updateUserData = (currentUser, name, image) => {
         updateProfile(currentUser, {
             displayName: name,
             photoURL: image
-
         })
             .then(() => { })
-            .catch(error => setError(error.message))
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    text: `${error.message}`
+                })
+            })
     }
 
     return (
@@ -68,9 +83,9 @@ const Register = () => {
                     <div className='text-center'>
                         <h1>Already have an Account?</h1>
                         <Link className='text-red-500' to="/login">Log in</Link>
-                    </div>                    
+                    </div>
                 </form>
-               
+
             </div>
         </div>
     );

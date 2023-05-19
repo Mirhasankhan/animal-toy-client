@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { firebaseProvider } from '../Providers/Provider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { user, logIn, googleSignIn } = useContext(firebaseProvider)
@@ -15,9 +16,16 @@ const Login = () => {
         const password = form.password.value;
         logIn(email, password)
             .then(result => { 
+                Swal.fire('Loggedin Successfully')
                 navigate(from, { replace: true })
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',                   
+                    text: `${error.message}`,
+                    
+                  })
+            })
     }
 
     const handleGoogleSignIn = () => {
