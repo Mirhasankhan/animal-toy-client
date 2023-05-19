@@ -4,7 +4,7 @@ import { firebaseProvider } from '../Providers/Provider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-    const { user, logIn, googleSignIn } = useContext(firebaseProvider)
+    const { logIn, googleSignIn } = useContext(firebaseProvider)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/'
@@ -15,23 +15,30 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         logIn(email, password)
-            .then(result => { 
+            .then(() => {
                 Swal.fire('Loggedin Successfully')
                 navigate(from, { replace: true })
             })
             .catch(error => {
                 Swal.fire({
-                    icon: 'error',                   
+                    icon: 'error',
                     text: `${error.message}`,
-                    
-                  })
+                })
             })
     }
 
     const handleGoogleSignIn = () => {
-        googleSignIn()
-            .then(result => { })
-            .catch(error => { })
+            googleSignIn()
+            .then(() => {
+                Swal.fire('Loggedin Successfully')
+                navigate(from, { replace: true })
+            })
+            .catch((error) => {
+                Swal.fire({
+                    icon: 'error',
+                    text: `${error.message}`,
+                })
+            })
     }
     return (
         <div className='bg-base-200 py-5'>

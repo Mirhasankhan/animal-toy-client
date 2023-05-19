@@ -20,7 +20,7 @@ const Provider = ({children}) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
     const googleSignIn = ()=>{
-        signInWithPopup(auth, googleProvider)
+        return signInWithPopup(auth, googleProvider)
     }
     const logOut = ()=>{
         return signOut(auth)

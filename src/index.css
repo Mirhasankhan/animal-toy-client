@@ -17,3 +17,7 @@
     @apply font-medium hover:bg-slate-400 hover:text-white
 }
 
+.footer-number{
+    @apply border-2 w-2/3 p-1 rounded-3xl bg-white text-black flex items-center
+}
+
