@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { firebaseProvider } from '../../Providers/Provider';
+import Swal from 'sweetalert2';
 
 const AddToys = () => {
     const { user } = useContext(firebaseProvider)
@@ -18,7 +19,7 @@ const AddToys = () => {
         const newToy = {
             toy,email,seller,price,quantity,description,rating, photo
         }
-        fetch('http://localhost:5000/addToy',{
+        fetch('https://animal-toys-server.vercel.app/addToy',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -27,7 +28,7 @@ const AddToys = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log(data);
+            Swal.fire('Toy Added Successfully!!')
         })
         form.reset()
 
@@ -41,27 +42,27 @@ const AddToys = () => {
                 <div className="card-body grid grid-cols-2 gap-4">
                     <div>
                         <div className="form-control">
-                            <input type="text" name='toy' placeholder="Toy Name" className="mb-3 input input-bordered" />
+                            <input required type="text" name='toy' placeholder="Toy Name" className="mb-3 input input-bordered" />
                         </div>
                         <div className="form-control">
-                            <input type="text" name='seller' defaultValue={user?.displayName} className="mb-3 input input-bordered" />
+                            <input required type="text" name='seller' defaultValue={user?.displayName} className="mb-3 input input-bordered" />
                         </div>
                         <div className="form-control">
-                            <input type="text" name='price' placeholder="Price" className="mb-3 input input-bordered" />
+                            <input required type="text" name='price' placeholder="Price" className="mb-3 input input-bordered" />
                         </div>
                         <div className="form-control">
-                            <input type="text" name='quantity' placeholder="Quantity" className="mb-3 input input-bordered" />
+                            <input required type="text" name='quantity' placeholder="Quantity" className="mb-3 input input-bordered" />
                         </div>
                     </div>
                     <div>
                         <div className="form-control">
-                            <input type="email" name='email' defaultValue={user?.email} className="mb-3 input input-bordered" />
+                            <input required type="email" name='email' defaultValue={user?.email} className="mb-3 input input-bordered" />
                         </div>
                         <div className="form-control">
-                            <input type="text" name='rating' placeholder="Rating" className="mb-3 input input-bordered" />
+                            <input required type="text" name='rating' placeholder="Rating" className="mb-3 input input-bordered" />
                         </div>
                         <div className="form-control">
-                            <input type="url" name='photo' placeholder="PhotoURL" className="mb-3 input input-bordered" />
+                            <input required type="url" name='photo' placeholder="PhotoURL" className="mb-3 input input-bordered" />
                         </div>
                         {/* <select name="animals" id="animals">
                             <option value="Mammal">Mammal</option>
