@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { firebaseProvider } from '../Providers/Provider';
 
 const Login = () => {
     const { user, logIn, googleSignIn } = useContext(firebaseProvider)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
 
     const handleLogin = e => {
         e.preventDefault()
@@ -11,7 +14,9 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         logIn(email, password)
-            .then(result => { })
+            .then(result => { 
+                navigate(from, { replace: true })
+            })
             .catch(error => console.log(error))
     }
 

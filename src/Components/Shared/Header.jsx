@@ -5,7 +5,13 @@ import { firebaseProvider } from '../Providers/Provider';
 
 
 const Header = () => {
-    const { user } = useContext(firebaseProvider)    
+    const { user, logOut } = useContext(firebaseProvider) 
+    
+    const handleLogout = ()=>{
+        logOut()
+        .then(result =>{})
+        .catch(error =>{})
+    }
 
     return (
         <div className="navbar bg-base-100">
@@ -26,7 +32,12 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user?.email ? <img title={user.displayName} className='h-16 w-16 rounded-full' src={user.photoURL} alt="" /> : <button>Login</button>
+                    user?.email ? <div className='flex'>
+                         <img title={user.displayName} className='h-16 w-16 rounded-full' src={user.photoURL} alt="" /> 
+                         <button onClick={handleLogout} className='submit-button'>Logout</button>
+                    </div>
+                    
+                    : <button className='submit-button'><Link to="/login">Login</Link></button>
                 }
             </div>
         </div>
