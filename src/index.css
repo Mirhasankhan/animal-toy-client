@@ -4,20 +4,27 @@
 
 
 .submit-button{
-    @apply bg-orange-600 text-white py-2 px-3 rounded-md font-semibold;
+    @apply bg-orange-600 text-white py-2 px-3 rounded-md font-semibold hover:bg-purple-500;
 }
 .delete-button{
     @apply bg-purple-600 text-white py-2 px-3 rounded-md font-semibold;
 }
 .subscribe-button{
-    @apply bg-orange-600 text-white py-3 px-5 rounded-r-lg font-semibold;
+    @apply bg-orange-600 text-white py-3 px-5 rounded-r-lg font-semibold hover:bg-purple-500;
 }
 
 .nav-links{
-    @apply font-medium hover:bg-slate-400 hover:text-white
+    @apply font-medium hover:bg-purple-400  hover:text-white
 }
 
 .footer-number{
     @apply border-2 w-full lg:w-2/3 p-2 rounded-3xl bg-white text-black flex items-center
+}
+.tab-container{
+    @apply text-white font-bold text-xl p-3 rounded-2xl
+}
+
+.blog-container{
+    @apply bg-purple-400 w-1/2 p-3 mt-3 ml-3 rounded-md text-white
 }
 
