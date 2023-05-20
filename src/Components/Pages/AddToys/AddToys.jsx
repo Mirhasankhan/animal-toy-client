@@ -70,7 +70,8 @@ const AddToys = () => {
                         <div className="form-control">
                             <input required type="url" name='photo' placeholder="PhotoURL" className="mb-3 input input-bordered" />
                         </div>
-                        <select name="animals" id="animals" onChange={handleSelect}>
+                        <label className='font-medium' for="animal">Choose A Sub Category: </label>
+                        <select className='p-1 rounded-md border-2 border-purple-600' name="animals" id="animals" onChange={handleSelect}>
                             <option value="Mammal Toys">Mammal Toys</option>
                             <option value="Birds Toys">Birds Toys</option>
                             <option value="Reptile Toys">Reptile Toys</option>

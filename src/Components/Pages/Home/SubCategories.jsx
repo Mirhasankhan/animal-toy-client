@@ -16,24 +16,26 @@ const SubCategories = ({ allToys }) => {
                     <Tab className="tab-container" >Birds Toys</Tab>
                     <Tab className="tab-container" >Reptile Toys </Tab>
                 </TabList>
-                <TabPanel>
-                    <div>
+                <TabPanel className="w-full">
+                    <div className='flex'>
                         {
                             mammalToy.map(m => <SubCategoryDetail>{m}</SubCategoryDetail>)
                         }
                     </div>
                 </TabPanel>
-                <TabPanel>
-                    <div>
+                <TabPanel className="w-full">
+                    <div className='flex gap-5'>
                         {
                             birdsToy.map(b => <SubCategoryDetail>{b}</SubCategoryDetail>)
                         }
                     </div>
                 </TabPanel>
-                <TabPanel>
-                    {
+                <TabPanel className="w-full">
+                   <div className='flex'>
+                   {
                         reptileToy.map(r => <SubCategoryDetail>{r}</SubCategoryDetail>)
                     }
+                   </div>
                 </TabPanel>
             </Tabs>
         </div>
