@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import ToysRow from './ToysRow';
 
 const AllToys = () => {
-    const loadedToys = useLoaderData()
+    const loadedToys = useLoaderData()   
     
     return (
         <div className="overflow-x-auto">

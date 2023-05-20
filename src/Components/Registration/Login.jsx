@@ -30,7 +30,7 @@ const Login = () => {
     const handleGoogleSignIn = () => {
             googleSignIn()
             .then(() => {
-                Swal.fire('Loggedin Successfully')
+                Swal.fire('Logged In Successfully')
                 navigate(from, { replace: true })
             })
             .catch((error) => {

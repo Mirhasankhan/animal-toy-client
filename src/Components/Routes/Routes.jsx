@@ -20,7 +20,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: ()=>fetch('https://animal-toys-server.vercel.app/allToy')
             },
             {
                 path: '/login',
