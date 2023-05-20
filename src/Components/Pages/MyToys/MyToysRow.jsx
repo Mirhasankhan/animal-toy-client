@@ -14,7 +14,7 @@ const MyToysRow = ({addedToy, handleDelete,handleUpdate}) => {
             <td>{email}</td>
             <td>{description}</td>
             <td>
-                <Link to={`/${_id}`}><button onClick={()=> handleUpdate(_id)} className='submit-button mr-2'>Update</button></Link>
+                <Link to={`/myToys/${_id}`}><button onClick={()=> handleUpdate(_id)} className='submit-button mr-2'>Update</button></Link>
                 <button onClick={()=>handleDelete(_id)} className='delete-button'>Delete</button>
             </td>                       
         </tr>

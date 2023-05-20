@@ -14,14 +14,14 @@ const Header = () => {
     }
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar text-white sticky top-0 bg-blue-600">
             <div className="navbar-start">
                 <div className='flex items-center'>
                     <img className='h-16 w-16 rounded-full mr-3' src={logo} alt="" />
-                    <h1>Toy Emporium</h1>
+                    <h1 className='font-bold italic text-2xl'>Toy Emporium</h1>
                 </div>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-center lg:flex">
                 <ul className="menu menu-horizontal px-1 flex gap-5">
                     <Link className='nav-links' to="/">Home</Link>
                     <Link className='nav-links' to="/allToys">All Toys</Link>

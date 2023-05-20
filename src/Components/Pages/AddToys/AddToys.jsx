@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { firebaseProvider } from '../../Providers/Provider';
 import Swal from 'sweetalert2';
 
 const AddToys = () => {
     const { user } = useContext(firebaseProvider)
-    const handleAddAToy = e =>{
+    const [value, setValue] = useState('Mammals Toys')
+    const handleSelect = (e)=>{                
+        setValue(e.target.value);
+    }
+    
+    const handleAddAToy = e =>{       
         e.preventDefault();
         const form = e.target;
         const toy = form.toy.value;
@@ -14,10 +19,11 @@ const AddToys = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
         const rating = form.rating.value;
-        const photo = form.photo.value
-
+        const photo = form.photo.value  
+        const subCategory = value;     
+       
         const newToy = {
-            toy,email,seller,price,quantity,description,rating, photo
+            toy,email,seller,price,quantity,description,rating, photo, subCategory
         }
         fetch('https://animal-toys-server.vercel.app/addToy',{
             method: 'POST',
@@ -64,11 +70,11 @@ const AddToys = () => {
                         <div className="form-control">
                             <input required type="url" name='photo' placeholder="PhotoURL" className="mb-3 input input-bordered" />
                         </div>
-                        {/* <select name="animals" id="animals">
-                            <option value="Mammal">Mammal</option>
-                            <option value="Bird">Birds</option>
-                            <option value="Reptile">Reptile</option>
-                        </select> */}
+                        <select name="animals" id="animals" onChange={handleSelect}>
+                            <option value="Mammal Toys">Mammal Toys</option>
+                            <option value="Birds Toys">Birds Toys</option>
+                            <option value="Reptile Toys">Reptile Toys</option>
+                        </select>
                     </div>
                 </div>
                 <div>

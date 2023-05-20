@@ -42,7 +42,7 @@ const Login = () => {
     }
     return (
         <div className='bg-base-200 py-5'>
-            <div className='w-2/5 mx-auto bg-white rounded-md px-5 pb-5'>
+            <div className='w-2/3 lg:w-2/5 mx-auto bg-white rounded-md px-5 pb-5'>
                 <h1 className='text-center text-3xl font-semibold pt-5'>Login to your account</h1>
                 <form onSubmit={handleLogin}>
                     <div className="card-body">
