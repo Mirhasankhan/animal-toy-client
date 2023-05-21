@@ -11,9 +11,7 @@ const SubCategories = ({ allToys }) => {
     return (
         <div>
             <h1 className='text-center text-4xl mb-8 mt-4 text-blue-500 font-bold'>Watch different categories of toys</h1>
-            <Tabs className="mx:3 md:mx-12" data-aos="fade-in"
-                data-aos-easing="ease-out-cubic"
-                data-aos-duration="1000">
+            <Tabs className="mx:3 md:mx-12">
                 <TabList className="text-white flex justify-around px-2 py-2">
                     <Tab className="tab-container" >Mammals Toys</Tab>
                     <Tab className="tab-container" >Birds Toys</Tab>
