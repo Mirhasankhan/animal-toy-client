@@ -20,7 +20,7 @@ const AddToys = () => {
         const description = form.description.value;
         const rating = form.rating.value;
         const photo = form.photo.value  
-        const subCategory = value;     
+        const subCategory = value;   
        
         const newToy = {
             toy,email,seller,price,quantity,description,rating, photo, subCategory

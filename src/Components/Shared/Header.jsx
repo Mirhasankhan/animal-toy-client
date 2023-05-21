@@ -43,7 +43,7 @@ const Header = () => {
                 {
                     user?.email ? <div className='flex'>
                          <img title={user.displayName} className='h-16 w-16 rounded-full' src={user.photoURL} alt="" /> 
-                         <button onClick={handleLogout} className='submit-button'>Logout</button>
+                         {/* <button onClick={handleLogout} className='submit-button'>Logout</button> */}
                     </div>
                     
                     : <button className='submit-button'><Link to="/login">Login</Link></button>
