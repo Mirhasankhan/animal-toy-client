@@ -4,31 +4,31 @@ import app from '../../firebase/Firebase.config';
 
 export const firebaseProvider = createContext(null)
 
-const Provider = ({children}) => {
+const Provider = ({ children }) => {
     const auth = getAuth(app)
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
     const googleProvider = new GoogleAuthProvider()
 
-    const createUser = (email, password)=>{
+    const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
-    const logIn = (email, password)=>{
+    const logIn = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
-    const googleSignIn = ()=>{
+    const googleSignIn = () => {
         return signInWithPopup(auth, googleProvider)
     }
-    const logOut = ()=>{
+    const logOut = () => {
         return signOut(auth)
     }
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, currentUser => {            
-            console.log(currentUser);
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+
             setUser(currentUser)
             setLoading(false)
         })

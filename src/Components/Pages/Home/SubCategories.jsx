@@ -20,21 +20,21 @@ const SubCategories = ({ allToys }) => {
                 <TabPanel className="w-full">
                     <div className='grid grid-cols-3 gap-1 lg:gap-7'>
                         {
-                            mammalToy.map(m => <SubCategoryDetail>{m}</SubCategoryDetail>)
+                            mammalToy.map(m => <SubCategoryDetail key={m._id}>{m}</SubCategoryDetail>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel className="w-full">
                     <div className='grid grid-cols-3 gap-1 lg:gap-7'>
                         {
-                            birdsToy.map(b => <SubCategoryDetail>{b}</SubCategoryDetail>)
+                            birdsToy.map(b => <SubCategoryDetail key={b._id}>{b}</SubCategoryDetail>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel className="w-full">
                     <div className='grid grid-cols-3 gap-1 lg:gap-7'>
                         {
-                            reptileToy.map(r => <SubCategoryDetail>{r}</SubCategoryDetail>)
+                            reptileToy.map(r => <SubCategoryDetail key={r._id}>{r}</SubCategoryDetail>)
                         }
                     </div>
                 </TabPanel>

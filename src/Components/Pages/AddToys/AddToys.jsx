@@ -1,15 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { firebaseProvider } from '../../Providers/Provider';
 import Swal from 'sweetalert2';
+import useTitle from '../../../hooks/useTitle';
 
 const AddToys = () => {
+    useTitle('addToys')
     const { user } = useContext(firebaseProvider)
     const [value, setValue] = useState('Mammals Toys')
-    const handleSelect = (e)=>{                
+    const handleSelect = (e) => {
         setValue(e.target.value);
     }
-    
-    const handleAddAToy = e =>{       
+
+    const handleAddAToy = e => {
         e.preventDefault();
         const form = e.target;
         const toy = form.toy.value;
@@ -19,23 +21,23 @@ const AddToys = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
         const rating = form.rating.value;
-        const photo = form.photo.value  
-        const subCategory = value;   
-       
+        const photo = form.photo.value
+        const subCategory = value;
+
         const newToy = {
-            toy,email,seller,price,quantity,description,rating, photo, subCategory
+            toy, email, seller, price, quantity, description, rating, photo, subCategory
         }
-        fetch('https://animal-toys-server.vercel.app/addToy',{
+        fetch('https://animal-toys-server.vercel.app/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newToy)
         })
-        .then(res => res.json())
-        .then(data =>{
-            Swal.fire('Toy Added Successfully!!')
-        })
+            .then(res => res.json())
+            .then(data => {
+                Swal.fire('Toy Added Successfully!!')
+            })
         form.reset()
 
     }
@@ -70,7 +72,7 @@ const AddToys = () => {
                         <div className="form-control">
                             <input required type="url" name='photo' placeholder="PhotoURL" className="mb-3 input input-bordered" />
                         </div>
-                        <label className='font-medium' for="animal">Choose A Sub Category: </label>
+                        <label className='font-medium' htmlFor="animal">Choose A Sub Category: </label>
                         <select className='p-1 rounded-md border-2 border-purple-600' name="animals" id="animals" onChange={handleSelect}>
                             <option value="Mammal Toys">Mammal Toys</option>
                             <option value="Birds Toys">Birds Toys</option>
@@ -83,7 +85,6 @@ const AddToys = () => {
                     <input className='submit-button w-full mb-3' type="submit" value="Add Toy" />
                 </div>
             </form>
-
         </div>
     );
 };

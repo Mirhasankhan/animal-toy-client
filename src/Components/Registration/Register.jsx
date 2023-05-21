@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { firebaseProvider } from '../Providers/Provider';
 import { updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
+    useTitle('register')
     const { createUser } = useContext(firebaseProvider)
     const handleRegister = e => {
         e.preventDefault()
@@ -19,16 +21,17 @@ const Register = () => {
                 const newUser = result.user;
                 updateUserData(newUser, name, photo)
                 Swal.fire({
-                    icon: 'success',                   
-                    text: 'Account Created Successfully'                  
+                    icon: 'success',
+                    text: 'Account Created Successfully'
                 })
             })
             .catch(error => {
                 Swal.fire({
-                    icon: 'error',                   
-                    text: `${error.message}`                    
+                    icon: 'error',
+                    text: `${error.message}`
                 })
             })
+            form.reset()
     }
 
     const updateUserData = (currentUser, name, image) => {
@@ -81,10 +84,8 @@ const Register = () => {
                     </div>
                     <div className='text-center pb-3'>
                         <h1>Already have an Account?<Link className='text-red-500' to="/login">Log in</Link></h1>
-                        
                     </div>
                 </form>
-
             </div>
         </div>
     );

@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { firebaseProvider } from '../../Providers/Provider';
 import MyToysRow from './MyToysRow';
 import Swal from 'sweetalert2';
+import useTitle from '../../../hooks/useTitle';
 
 const MyToys = () => {
+    useTitle('myToys')
     const { user } = useContext(firebaseProvider)
     const [toys, setToys] = useState([])
 
-    const url = `https://animal-toys-server.vercel.app/allToy?email=${user?.email}`;    
+    const url = `https://animal-toys-server.vercel.app/allToy?email=${user?.email}`;
 
     useEffect(() => {
         fetch(url)
@@ -16,7 +18,6 @@ const MyToys = () => {
                 setToys(data);
             })
     }, [url])
-    
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -33,7 +34,7 @@ const MyToys = () => {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
-                    .then(data => {                        
+                    .then(data => {
                         const filter = toys.filter(toy => toy._id !== id)
                         setToys(filter)
                         if (data.deletedCount > 0) {
@@ -49,7 +50,7 @@ const MyToys = () => {
 
     }
 
-    const handleUpdate = (id) =>{
+    const handleUpdate = (id) => {
         console.log(id);
     }
 
@@ -80,7 +81,7 @@ const MyToys = () => {
                         }
                     </tbody>
                 </table>
-            </div>           
+            </div>
         </div>
     );
 };
