@@ -3,6 +3,8 @@ import SubCategories from './SubCategories';
 import { useLoaderData } from 'react-router-dom';
 import Gallery from './Gallery';
 import Banner from './Banner';
+import TopSellers from './TopSellers';
+import About from './About';
 
 
 const Home = () => {
@@ -27,6 +29,10 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <h1 className='mt-12 mb-5 text-4xl text-center text-purple-600 font-bold'>About Us</h1>
+            <About></About>
+            <h1 className='mt-12 mb-5 text-4xl text-center text-purple-600 font-bold'>Meet Our <span>Top Buyers</span></h1>
+            <TopSellers></TopSellers>
         </div>
     );
 };
