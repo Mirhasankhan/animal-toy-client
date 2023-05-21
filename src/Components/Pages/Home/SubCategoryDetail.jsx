@@ -1,17 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
-const SubCategoryDetail = ({children}) => {
-    const {price, photo, toy, rating} = children;
-    return (
-        <div className='bg-green-400'>
-            <img className='w-24' src={photo} alt="" />
-            <h1>{toy}</h1>
-            <h1>{price}</h1>
-            <h1>{rating}</h1>
-            <Link>
-                <button>View Details</button>
-            </Link>
+const SubCategoryDetail = ({ children }) => {
+    const { price, photo, toy, rating } = children;
+    return (       
+        <div className="mt-3 card w-full bg-purple-100 shadow-xl">
+            <figure className="px-10 pt-10">
+                <img src={photo} alt="Shoes" className="rounded-xl" />
+            </figure>
+            <div className="card-body flex flex-col">
+                <h2 className="card-title text-2xl">{toy}</h2>
+                <div className='flex justify-between mt-auto'>
+                    <h1 className='text-xl'>Price: {price}</h1>
+                    <Rating
+                            style={{ maxWidth: 100 }}
+                            value={Math.round(rating)}
+                            readOnly
+                    />
+                </div>
+                <div className="card-actions">
+                    <button className="btn btn-primary w-full">Buy Now</button>
+                </div>
+            </div>
         </div>
     );
 };
