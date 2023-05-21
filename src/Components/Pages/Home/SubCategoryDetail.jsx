@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
+
 const SubCategoryDetail = ({ children }) => {
+   
+    console.log(user);
     const { _id,price, photo, toy, rating } = children;
     return (
         <div className="mt-3 card w-full bg-purple-100 ">
@@ -21,7 +24,7 @@ const SubCategoryDetail = ({ children }) => {
                     />
                 </div>
                 <div className="card-actions">
-                    <Link to={`/allToys/${_id}`}>
+                    <Link to={`/allToys/${_id}`}>                      
                         <button className="btn btn-primary w-full">View Details</button>
                     </Link>
                 </div>
