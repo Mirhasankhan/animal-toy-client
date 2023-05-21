@@ -16,7 +16,7 @@ const Header = () => {
     }
 
     return (
-        <div className="z-10 navbar text-white sticky top-0 bg-gray-400">
+        <div className="z-10 navbar text-white sticky top-0 bg-black md:px-8">
             <div className="navbar-start">
                 <div className='flex items-center'>
                     <img className='h-16 w-16 rounded-full mr-3' src={logo} alt="" />

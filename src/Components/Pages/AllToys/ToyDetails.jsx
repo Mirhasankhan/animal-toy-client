@@ -30,24 +30,26 @@ const ToyDetails = () => {
         //         </div>
         //     </div>
         // </div>
-        <div className="text-white font-medium italic text-xl  card w-full lg:w-2/3 mx-2 lg:mx-auto shadow-xl my-5 bg-green-400">
-            <figure><img className='w-full h-96' src={photo} alt="Shoes" /></figure>
-            <div className="card-body">
-                <div className='flex'>
-                    <div className='w-full'>
-                        <h1>Name: {toy}</h1>
-                        <h1>Seller: {seller}</h1>
-                        <h1>Email: {email}</h1>
-                        <Rating
-                            style={{ maxWidth: 200 }}
-                            value={Math.round(rating)}
-                            readOnly
-                        />
-                    </div>
-                    <div className='w-full'>
-                        <h1>Available Quantity: <span className='text-orange-600'>{quantity}</span></h1>
-                        <h1>Price: <span className='text-orange-600'>{price}</span></h1>
-                        <h1>Description: {description}</h1>
+        <div className='bg-gray-300 py-5'>
+            <div className="text-white font-medium italic text-xl  card w-full lg:w-1/2 mx-2 lg:mx-auto shadow-xl bg-green-400">
+                <figure><img className='w-full h-96' src={photo} alt="Shoes" /></figure>
+                <div className="card-body">
+                    <div className='flex'>
+                        <div className='w-full'>
+                            <h1>Name: {toy}</h1>
+                            <h1 className='my-2'>Seller: {seller}</h1>
+                            <h1>Email: {email}</h1>
+                            <Rating
+                                style={{ maxWidth: 100 }}
+                                value={Math.round(rating)}
+                                readOnly
+                            />
+                        </div>
+                        <div className='w-full'>
+                            <h1>Available Quantity: <span className='text-orange-600'>{quantity}</span></h1>
+                            <h1 className='my-2'>Price: <span className='text-orange-600'>{price}</span></h1>
+                            <h1>Description: {description}</h1>
+                        </div>
                     </div>
                 </div>
             </div>

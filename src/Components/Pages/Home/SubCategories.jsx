@@ -10,6 +10,7 @@ const SubCategories = ({ allToys }) => {
 
     return (
         <div>
+            <h1 className='text-center text-4xl mb-8 mt-4 text-blue-500 font-bold'>Watch different categories of toys</h1>
             <Tabs className="mx:3 md:mx-12" data-aos="fade-in"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="1000">
@@ -19,21 +20,21 @@ const SubCategories = ({ allToys }) => {
                     <Tab className="tab-container" >Reptile Toys </Tab>
                 </TabList>
                 <TabPanel className="w-full">
-                    <div className='grid grid-cols-3 gap-3'>
+                    <div className='grid grid-cols-3 gap-1 lg:gap-7'>
                         {
                             mammalToy.map(m => <SubCategoryDetail>{m}</SubCategoryDetail>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel className="w-full">
-                    <div className='grid grid-cols-3 gap-3'>
+                    <div className='grid grid-cols-3 gap-1 lg:gap-7'>
                         {
                             birdsToy.map(b => <SubCategoryDetail>{b}</SubCategoryDetail>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel className="w-full">
-                    <div className='grid grid-cols-3 gap-3'>
+                    <div className='grid grid-cols-3 gap-1 lg:gap-7'>
                         {
                             reptileToy.map(r => <SubCategoryDetail>{r}</SubCategoryDetail>)
                         }
