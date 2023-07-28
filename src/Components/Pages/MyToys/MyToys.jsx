@@ -3,6 +3,8 @@ import { firebaseProvider } from '../../Providers/Provider';
 import MyToysRow from './MyToysRow';
 import Swal from 'sweetalert2';
 import useTitle from '../../../hooks/useTitle';
+import 'animate.css';
+
 
 const MyToys = () => {
     useTitle('myToys')
@@ -19,6 +21,7 @@ const MyToys = () => {
             })
     }, [url])
 
+    
     const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -55,9 +58,12 @@ const MyToys = () => {
     }
 
     return (
-        <div>
-            <div className="overflow-x-auto">
-                <table className="table w-full">
+        <div className=''>
+            <div className='flex items-center justify-center h-18 my-4'>
+                <h1 className='animate__animated animate__backInRight text-4xl font-semibold '>My Toys</h1>
+            </div>
+            {/* <div className="overflow-x-auto mx-5">
+                <table className="table table-zebra w-full">
                     <thead>
                         <tr>
                             <th>Seller</th>
@@ -81,7 +87,35 @@ const MyToys = () => {
                         }
                     </tbody>
                 </table>
-            </div>
+            </div> */}
+            {
+                toys.length > 0 ? <div className="overflow-x-auto mx-5">
+                    <table className="table table-zebra w-full">
+                        <thead>
+                            <tr>
+                                <th>Seller</th>
+                                <th>Toy Name</th>
+                                <th>Price</th>
+                                <th>Rating</th>
+                                <th>Quantity</th>
+                                <th>Email</th>
+                                <th>Description</th>
+                                <th>Make Changes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                toys.map(toy => <MyToysRow
+                                    key={toy._id}
+                                    addedToy={toy}
+                                    handleDelete={handleDelete}
+                                    handleUpdate={handleUpdate}
+                                ></MyToysRow>)
+                            }
+                        </tbody>
+                    </table>
+                </div> : <p className='text-4xl font-semibold text-center mt-24'>No Data Available</p>
+            }
         </div>
     );
 };

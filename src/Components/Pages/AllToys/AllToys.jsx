@@ -9,22 +9,25 @@ const AllToys = () => {
     const [ourToys, setOurToys] = useState(loadedToys)
     const handleSearch = e => {
         e.preventDefault()
-        const searchValue = e.target.search.value;
+        // const searchValue = e.target.search.value;
+        const searchValue = e.target.value;
         const filter = ourToys.filter(toy => toy.toy.toLowerCase().includes(searchValue))
         setOurToys(filter)
     }
 
     return (
-        <div>
+        <div className='mb-4 mx-5'>
             <div className='flex justify-center my-5'>
                 <h1 className='text-4xl font-bold text-center mr-4'>All Of Our Toys Here!!</h1>
-                <form onSubmit={handleSearch}>
+                {/* <form onSubmit={handleSearch}>
                     <input className='border-2 rounded-l-lg p-[10px]' name='search' type="text" placeholder='search by name' />
                     <input className='subscribe-button' type="submit" value="Search" />
-                </form>
+                </form> */}
+                <input onChange={handleSearch} className='border-2 rounded-l-lg p-[10px]' name='search' type="text" placeholder='search by name' />
+                <input className='subscribe-button' type="submit" value="Search" />
             </div>
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table table-zebra w-full">
                     <thead>
                         <tr>
                             <th>SL</th>

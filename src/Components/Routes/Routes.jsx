@@ -10,7 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyToys from "../Pages/MyToys/MyToys";
 import WrongURL from "../Pages/ErrorRoute/WrongURL";
 import Blogs from "../Pages/Blogs/Blogs";
-// import UpdateToy from "../Pages/MyToys/UpdateToy";
+import UpdateToy from "../Pages/MyToys/UpdateToy";
 
 
 const router = createBrowserRouter([
@@ -53,12 +53,12 @@ const router = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: 'myToys/:id',
+                element: <UpdateToy></UpdateToy>,
+                loader: ({params})=> fetch(`https://animal-toys-server.vercel.app/allToy/${params.id}`)
             }
-            // {
-            //     path: 'myToys/:id',
-            //     element: <UpdateToy></UpdateToy>,
-            //     loader: ({params})=> fetch(`https://animal-toys-server.vercel.app/allToy/${params.id}`)
-            // }
         ]
     }
 ]);

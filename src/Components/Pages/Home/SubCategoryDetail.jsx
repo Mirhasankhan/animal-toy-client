@@ -4,29 +4,33 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
 
-const SubCategoryDetail = ({ children }) => {  
-   
-    const { _id,price, photo, toy, rating } = children;
+const SubCategoryDetail = ({ children }) => {    
+
+    const { _id, price, photo, toy, rating, seller } = children;
     return (
-        <div className="mt-3 card w-full bg-purple-100 ">
-            <figure className="px-10 pt-10">
-                <img src={photo} alt="Shoes" className="rounded-xl" />
-            </figure>
-            <div className="card-body flex flex-col">
-                <h2 className="card-title text-2xl">{toy}</h2>
-                <div className='flex justify-between mt-auto'>
-                    <h1 className='text-xl'>Price: {price}</h1>
+        <div data-aos="zoom-in" data-aos-duration="2000" className='grid md:grid-cols-2 border border-gray-200 p-4 rounded-lg'>
+            <div className='flex items-center'>
+                <img className='md:w-42' src={photo} alt="" />
+            </div>
+            <div>
+                <div className="flex gap-2">
+                    <h2 className="card-title">{toy}</h2>
+                    <div className="badge badge-accent">Trending</div>
+                </div>
+                <h1 className='my-3'>Seller: {seller}</h1>
+                <h3>Price: ${price}</h3>
+                <div className='flex gap-1 items-center my-3'>
+                    <h3>Rating:</h3>
                     <Rating
                         style={{ maxWidth: 100 }}
                         value={Math.round(rating)}
                         readOnly
                     />
                 </div>
-                <div className="card-actions">
-                    <Link to={`/allToys/${_id}`}>                      
-                        <button className="btn btn-primary w-full">View Details</button>
-                    </Link>
-                </div>
+                <Link to={`/allToys/${_id}`}>
+                    <button className="submit-button">View Details</button>
+                </Link>
+
             </div>
         </div>
     );

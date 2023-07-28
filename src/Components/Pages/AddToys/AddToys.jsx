@@ -2,14 +2,19 @@ import React, { useContext, useState } from 'react';
 import { firebaseProvider } from '../../Providers/Provider';
 import Swal from 'sweetalert2';
 import useTitle from '../../../hooks/useTitle';
+import { useEffect } from 'react';
+import 'animate.css';
 
 const AddToys = () => {
     useTitle('addToys')
     const { user } = useContext(firebaseProvider)
-    const [value, setValue] = useState('Mammals Toys')
+    const [value, setValue] = useState('Plush Toys')
     const handleSelect = (e) => {
         setValue(e.target.value);
     }
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     const handleAddAToy = e => {
         e.preventDefault();
@@ -42,11 +47,11 @@ const AddToys = () => {
 
     }
     return (
-        <div>
-            <div className='mb-5 flex items-center justify-center h-36 bg-gradient-to-r from-purple-500 to-pink-500"'>
-                <h1 className='text-4xl font-semibold text-white'>Add Your Toys Here</h1>
+        <div className='bg-gray-300 pb-5'>
+            <div className='flex items-center justify-center h-36 bg-gradient-to-r from-purple-500 to-pink-500"'>
+                <h1 className='animate__animated animate__backInRight text-4xl font-semibold text-white'>Add Your Toys Here</h1>
             </div>
-            <form onSubmit={handleAddAToy} className='bg-green-400 w-3/4 mx-auto mb-5 p-5 rounded-lg'>
+            <form onSubmit={handleAddAToy} className='bg-white w-3/4 mx-auto px-5 pb-2 mt-5 rounded-lg'>
                 <div className="card-body grid grid-cols-2 gap-4">
                     <div>
                         <div className="form-control">
@@ -74,14 +79,15 @@ const AddToys = () => {
                         </div>
                         <label className='font-medium' htmlFor="animal">Choose A Sub Category: </label>
                         <select className='p-1 rounded-md border-2 border-purple-600' name="animals" id="animals" onChange={handleSelect}>
-                            <option value="Mammal Toys">Mammal Toys</option>
-                            <option value="Birds Toys">Birds Toys</option>
-                            <option value="Reptile Toys">Reptile Toys</option>
+                            <option value="Plush Toys">Plush Toys</option>
+                            <option value="Animal Figures">Animal Figures</option>
+                            <option value="Interactive Pets">Interactive Pets</option>
                         </select>
                     </div>
                 </div>
                 <div>
-                    <input className='border-2 w-full pl-3 rounded-lg py-2 mb-3' type="text" name='description' placeholder='Description' />
+                    <textarea className='border-2 w-full pl-3 rounded-lg py-2 mb-3' type="text" name='description' placeholder='Description' rows="5"></textarea>
+                    {/* <input className='border-2 w-full pl-3 rounded-lg py-2 mb-3' type="text" name='description' placeholder='Description' /> */}
                     <input className='submit-button w-full mb-3' type="submit" value="Add Toy" />
                 </div>
             </form>

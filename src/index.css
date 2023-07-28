@@ -1,20 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Delicious+Handrawn&family=Exo+2&family=Itim&family=Josefin+Sans&family=Nunito&family=Poppins&family=Rancho&family=Righteous&family=Roboto&family=Ubuntu&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+body{
+    font-family: 'Nunito', sans-serif;
+  }
 .submit-button{
-    @apply bg-orange-600 text-white py-2 px-3 rounded-md font-semibold hover:bg-purple-500;
+    @apply bg-blue-800 text-white py-2 px-3 rounded-xl font-semibold hover:bg-purple-500;
 }
 .delete-button{
-    @apply bg-purple-600 text-white py-2 px-3 rounded-md font-semibold;
+    @apply bg-purple-600 text-white py-1 px-3 rounded-md font-semibold;
 }
 .subscribe-button{
     @apply bg-orange-600 text-white py-3 px-5 rounded-r-lg font-semibold hover:bg-purple-500;
 }
 
 .nav-links{
-    @apply font-medium hover:bg-purple-400  hover:text-white
+    @apply font-medium
 }
 
 .footer-number{

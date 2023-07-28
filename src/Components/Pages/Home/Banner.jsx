@@ -1,6 +1,7 @@
 import React from 'react';
 import profile from '../../../assets/banner1.jpg'
-
+import 'keen-slider/keen-slider.min.css'
+import { useKeenSlider } from 'keen-slider/react'
 
 
 const Banner = () => {

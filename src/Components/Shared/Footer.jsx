@@ -4,15 +4,15 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaPhone, FaEnvelope } f
 
 const Footer = () => {
     return (
-        <div className='bg-[#111723]'>
+        <div className='bg-gray-400'>
             <div className='grid grid-cols-3 gap-6 py-5 mx-3 md:mx-16'>
                 <div className='w-full'>
                     <img className='h-24 w-36 rounded-lg' src={logo} alt="" />
-                    <h1 className='text-white italic text-2xl font-bold'>Toy Emporium</h1>
-                    <p className='text-white text-sm py-3'>Toy Emporium is your one-stop destination for all your animal toys needs in Bangladesh. We offer a wide range of products from top brands.</p>
+                    <h1 className='text-black italic text-2xl font-bold'>Toy Emporium</h1>
+                    <p className=' text-sm py-3'>Toy Emporium is your one-stop destination for all your animal toys needs in Bangladesh. We offer a wide range of products from top brands.</p>
                    
                 </div>
-                <div className='text-white w-full'>
+                <div className=' w-full'>
                     <h1 className='pb-12 text-xl font-bold italic'>Contact Info</h1>
                     <div className='footer-number'>
                         <FaPhone className='text-blue-600 mr-1'></FaPhone>
@@ -27,7 +27,7 @@ const Footer = () => {
                         <button className='subscribe-button'>Subscribe</button>
                     </div>
                 </div>
-                <div className='text-white w-full'>
+                <div className=' w-full'>
                     <h1 className='pb-12 text-xl font-bold italic'>Our Social Media Links</h1>
                     <div className="flex gap-1 md:gap-3">
                         <a href="https://www.facebook.com/">
@@ -48,8 +48,8 @@ const Footer = () => {
                         <button className='subscribe-button'>Subscribe</button>
                     </div>
                 </div>
-            </div>
-            <h1 className='text-center text-white text-xl pb-3'>&copy; ToyEmporium2023</h1>
+            </div>      
+            <h1 className='text-center  text-xl pb-3'>&copy; ToyEmporium2023</h1>
         </div>
     );
 };
