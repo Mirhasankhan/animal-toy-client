@@ -1,22 +1,68 @@
-import React from 'react';
-import profile from '../../../assets/banner1.jpg'
-import 'keen-slider/keen-slider.min.css'
-import { useKeenSlider } from 'keen-slider/react'
-
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import Slider from "./Slider";
+import image1 from '../../../assets/image-1.webp'
+import image2 from '../../../assets/image-2.webp'
+import image3 from '../../../assets/image-4.webp'
+import header1 from '../../../assets/header-1.json'
+import header2 from '../../../assets/header-2.json'
+import header3 from '../../../assets/header-3.json'
 
 const Banner = () => {
+    const [sliderRef] = useKeenSlider(
+        {
+            loop: true,
+        },
+        [
+            (slider) => {
+                let timeout;
+                let mouseOver = false;
+                function clearNextTimeout() {
+                    clearTimeout(timeout);
+                }
+                function nextTimeout() {
+                    clearTimeout(timeout);
+                    if (mouseOver) return;
+                    timeout = setTimeout(() => {
+                        slider.next();
+                    }, 2000);
+                }
+                slider.on("created", () => {
+                    slider.container.addEventListener("mouseover", () => {
+                        mouseOver = true;
+                        clearNextTimeout();
+                    });
+                    slider.container.addEventListener("mouseout", () => {
+                        mouseOver = false;
+                        nextTimeout();
+                    });
+                    nextTimeout();
+                });
+                slider.on("dragStarted", clearNextTimeout);
+                slider.on("animationEnded", nextTimeout);
+                slider.on("updated", nextTimeout);
+            },
+        ]
+    );
+
     return (
-        <div className='bg-gray-400 h-96 pt-4 overflow-hidden flex justify-center items-center'>
-        <div>
-            <img className='h-80 rounded-t-xl mr-5' src={profile} alt="" />
-        </div>
-        <div>
-            <h1 className='text-5xl font-bold text-white'>Buy Toys for<br />Beautiful Kids</h1>
-            <p className='my-3 text-xl text-black'>We believe in highest quality </p>
-            <button className="btn btn-outline btn-warning mb-3">Contact Us</button>
-        </div>
-    </div>
+        <>
+            <div className="w-full">
+                {/* banner section added */}
+                <div ref={sliderRef} className="keen-slider">
+                    <div className="keen-slider__slide number-slide2"><Slider toy={header1} image={image2} /></div>                    
+                    <div className="keen-slider__slide number-slide2"><Slider toy={header3} image={image3} /></div>  
+                    <div className="keen-slider__slide number-slide2"><Slider toy={header2} image={image1} /></div>                 
+                </div>
+                {/* banner section end */}
+            </div>
+        </>
     );
 };
 
 export default Banner;
+
+
+
+
+
