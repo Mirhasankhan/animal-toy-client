@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MyToysRow = ({ addedToy, handleDelete, handleUpdate }) => {
     const { _id, price, quantity, seller, toy, rating, description, email } = addedToy;
-    console.log(typeof price);
-
+    
     return (
         <tr>
             <td>{seller}</td>

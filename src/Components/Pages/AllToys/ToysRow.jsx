@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ToysRow = ({ toys, index }) => {
     const { _id, quantity, price, toy, seller, subCategory } = toys;
-    console.log(typeof price);
+    
     return (
         <tr>
             <th>{index + 1}</th>

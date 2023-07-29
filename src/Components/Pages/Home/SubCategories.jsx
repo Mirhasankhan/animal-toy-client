@@ -25,14 +25,14 @@ const SubCategories = ({ allToys }) => {
                     </div>
                 </TabPanel>
                 <TabPanel className="w-full">
-                    <div className='grid grid-cols-3 gap-1 lg:gap-7'>
+                    <div className='grid grid-cols-2 md:grid-cols-3 gap-1 lg:gap-7'>
                         {
                             animalFigures.map(b => <SubCategoryDetail key={b._id}>{b}</SubCategoryDetail>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel className="w-full">
-                    <div className='grid grid-cols-3 gap-1 lg:gap-7'>
+                    <div className='grid grid-cols-2 md:grid-cols-3 gap-1 lg:gap-7'>
                         {
                             interactivePets.map(r => <SubCategoryDetail key={r._id}>{r}</SubCategoryDetail>)
                         }

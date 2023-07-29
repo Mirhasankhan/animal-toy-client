@@ -10,12 +10,12 @@ const SubCategoryDetail = ({ children }) => {
     return (
         <div data-aos="zoom-in" data-aos-duration="2000" className='grid md:grid-cols-2 border border-gray-200 p-4 rounded-lg'>
             <div className='flex items-center'>
-                <img className='md:w-42' src={photo} alt="" />
+                <img className='w-32 md:w-42' src={photo} alt="" />
             </div>
             <div>
                 <div className="flex gap-2 mt-auto">
                     <h2 className="card-title">{toy}</h2>
-                    <div className="badge badge-accent">Trending</div>
+                    <div className="badge badge-accent md:flex hidden">Trending</div>
                 </div>
                 <h1 className='my-3'>Seller: {seller}</h1>
                 <h3>Price: ${price}</h3>
