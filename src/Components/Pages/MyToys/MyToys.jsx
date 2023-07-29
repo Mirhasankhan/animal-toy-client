@@ -90,7 +90,7 @@ const MyToys = () => {
                 </table>
             </div> */}
             {
-                toys.length > 0 ? <div className="overflow-x-auto mx-5">
+                toys.length > 0 ? <div className="overflow-x-auto mx-5 mb-5">
                     <table className="table table-zebra w-full font-medium">
                         <thead className='bg-red-500'>
                             <tr>

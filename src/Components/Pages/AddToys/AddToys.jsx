@@ -51,8 +51,8 @@ const AddToys = () => {
             <div className='flex items-center justify-center h-36 bg-gradient-to-r from-purple-500 to-pink-500"'>
                 <h1 className='animate__animated animate__backInRight text-4xl font-semibold text-white'>Add Your Toys Here</h1>
             </div>
-            <form onSubmit={handleAddAToy} className='bg-white w-3/4 mx-auto px-5 pb-2 mt-5 rounded-lg'>
-                <div className="card-body grid grid-cols-2 gap-4">
+            <form onSubmit={handleAddAToy} className='bg-white w-5/6 md:w-3/4 mx-auto px-2 md:px-5 pb-2 mt-5 rounded-lg'>
+                <div className="card-body grid grid-cols-2 gap-2 md:gap-4">
                     <div>
                         <div className="form-control">
                             <input required type="text" name='toy' placeholder="Toy Name" className="mb-3 input input-bordered" />
