@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { firebaseProvider } from '../Providers/Provider';
 import Swal from 'sweetalert2';
@@ -10,6 +10,10 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/'
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const handleLogin = e => {
         e.preventDefault()

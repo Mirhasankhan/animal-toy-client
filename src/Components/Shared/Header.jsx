@@ -8,7 +8,7 @@ import 'animate.css';
 
 const Header = () => {
     const { user, logOut } = useContext(firebaseProvider)
-    const [smDevice, setSmDevice] = useState(true)
+    const [smDevice, setSmDevice] = useState(false)
 
     const handleLogout = () => {
         logOut()
@@ -56,14 +56,21 @@ const Header = () => {
                                 </div>
                             }
                             <NavLink className='nav-links' to="/blogs">Blogs</NavLink>
+                            {
+                                user?.email ? <div className='flex'>                                   
+                                    <button onClick={handleLogout} className='submit-button'>Logout</button>
+                                </div>
+                                    : <button className='submit-button'><NavLink to="/login">Login</NavLink></button>
+                            }
                         </ul>
+
                     </div>
                 }
             </div>
             <div className="navbar-end hidden md:flex">
                 {
                     user?.email ? <div className='flex'>
-                        <img title={user.displayName} className='h-12 w-12 rounded-full mr-3' src={user.photoURL} alt="" />
+                        <img title={user.displayName} className='h-12 w-12 rounded-full mr-3 border-2 border-blue-400' src={user.photoURL} alt="" />
                         <button onClick={handleLogout} className='submit-button'>Logout</button>
                     </div>
                         : <button className='submit-button'><NavLink to="/login">Login</NavLink></button>

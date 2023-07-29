@@ -61,11 +61,11 @@ const ToyDetails = () => {
                     </div>
                 </div>
             </div> */}
-            <div className='md:w-2/3 mx-auto shadow-lg grid md:grid-cols-2 border border-gray-200 p-4 rounded-lg'>
+            <div className='md:w-2/3 md:mx-auto mx-3 shadow-lg grid grid-cols-2 border border-gray-200 p-4 rounded-lg'>
                 <div className='flex items-center'>
-                    <img className='md:h-80' src={photo} alt="" />
+                    <img className='h-64 md:h-80' src={photo} alt="" />
                 </div>
-                <div data-aos="fade-up" data-aos-duration="1000">
+                <div>
                     <h2 className="card-title">{toy}</h2>
                     <h1 className='my-3'>Seller: {seller}</h1>
                     <h1 className='my-3'>Seller Email: {email}</h1>

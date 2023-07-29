@@ -10,8 +10,9 @@ const MyToys = () => {
     useTitle('myToys')
     const { user } = useContext(firebaseProvider)
     const [toys, setToys] = useState([])
+    const [sort, setSort] = useState(1)
 
-    const url = `https://animal-toys-server.vercel.app/allToy?email=${user?.email}`;
+    const url = `https://animal-toys-server.vercel.app/myToy?email=${user?.email}&sort=${sort}`;
 
     useEffect(() => {
         fetch(url)
@@ -90,8 +91,8 @@ const MyToys = () => {
             </div> */}
             {
                 toys.length > 0 ? <div className="overflow-x-auto mx-5">
-                    <table className="table table-zebra w-full">
-                        <thead>
+                    <table className="table table-zebra w-full font-medium">
+                        <thead className='bg-red-500'>
                             <tr>
                                 <th>Seller</th>
                                 <th>Toy Name</th>

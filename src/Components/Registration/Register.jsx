@@ -58,28 +58,28 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Full Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Name" className="input input-bordered" />
+                            <input required type="text" name='name' placeholder="Name" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="Email" className="input input-bordered" />
+                            <input required type="email" name='email' placeholder="Email" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="Password" className="input input-bordered" />
+                            <input required type="password" name='password' placeholder="Password" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Photo</span>
                             </label>
-                            <input type="url" name='photo' placeholder="PhotoURL" className="input input-bordered" />
+                            <input required type="url" name='photo' placeholder="PhotoURL" className="input input-bordered" />
                         </div>
                         <div className="form-control mt-6">
-                            <input className='submit-button' type="submit" value="Create Account" />
+                            <input required className='submit-button' type="submit" value="Create Account" />
                         </div>
                     </div>
                     <div className='text-center pb-3'>
