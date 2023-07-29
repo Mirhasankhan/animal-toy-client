@@ -10,15 +10,15 @@ const SubCategories = ({ allToys }) => {
 
     return (
         <div>
-            <h1 className='text-center text-4xl mb-8 mt-4 font-bold'>Watch different categories of toys</h1>
-            <Tabs className="mx:3 md:mx-12">
-                <TabList className="text-white flex justify-around px-2 py-2">
+            <h1 className='text-center text-2xl md:text-4xl mb-8 mt-4 font-bold'>Watch different categories of toys</h1>
+            <Tabs className="mx-3 md:mx-12">
+                <TabList className="text-white justify-around flex gap-3 px-2 py-2">
                     <Tab className="tab-container" >Plush Toys</Tab>
                     <Tab className="tab-container" >Animal Figures</Tab>
                     <Tab className="tab-container" >Interactive Toys </Tab>
                 </TabList>
                 <TabPanel className="w-full">
-                    <div className='grid grid-cols-3 gap-1 lg:gap-7'>
+                    <div className='grid grid-cols-2 md:grid-cols-3 gap-1 lg:gap-7'>
                         {
                             plushToy.map(m => <SubCategoryDetail key={m._id}>{m}</SubCategoryDetail>)
                         }

@@ -4,19 +4,19 @@ import { FaStarOfDavid } from 'react-icons/fa';
 
 const About = () => {
     return (
-        <div className='flex mx-3 md:mx-6'>
+        <div className='md:flex mx-3 md:mx-6'>
             <div className='w-full'>
-                <img className='h-96 w-full' src={pic} alt="" />
+                <img className='h-64 md:h-96 w-full' src={pic} alt="" />
             </div>
             <div className='w-full'>
                 <h1 className='text-xl font-medium'>Quality & Experience</h1>
-                <h1 className='text-5xl font-medium my-5'>Welcome to ,<span className='text-green-400'>Toy Emporium</span></h1>
-                <p className='italic mb-3'>At Pethund, the ambition is that you should always feel welcome both as an advertiser and a visitor. A modern and easy-to-manage page makes it easier for Users to maneuver forward. or then randomised words which don’t look even slightly believable you need to be sure there isn’t anything embarrassing vestibu lum at eros.</p>
+                <h1 className='text-2xl md:text-5xl font-medium my-2 md:my-5'>Welcome to ,<span className='text-green-400'>Toy Emporium</span></h1>
+                <p className='italic mb-3 text-justify'>At Pethund, the ambition is that you should always feel welcome both as an advertiser and a visitor. A modern and easy-to-manage page makes it easier for Users to maneuver forward. or then randomised words which don’t look even slightly believable you need to be sure there isn’t anything embarrassing vestibu lum at eros.</p>
                 <div className='flex items-center'>
                     <FaStarOfDavid className='text-purple-600 mr-3'></FaStarOfDavid>
                     <h1>Best Cotton</h1>                    
                 </div>
-                <div className='flex items-center my-3'>
+                <div className='flex items-center my-1 md:my-3'>
                     <FaStarOfDavid className='text-purple-600 mr-3'></FaStarOfDavid>
                     <h1>Best Makers</h1>                    
                 </div>

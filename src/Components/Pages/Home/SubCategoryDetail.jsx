@@ -13,7 +13,7 @@ const SubCategoryDetail = ({ children }) => {
                 <img className='md:w-42' src={photo} alt="" />
             </div>
             <div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mt-auto">
                     <h2 className="card-title">{toy}</h2>
                     <div className="badge badge-accent">Trending</div>
                 </div>

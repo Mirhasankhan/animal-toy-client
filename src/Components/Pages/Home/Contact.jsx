@@ -4,8 +4,8 @@ import message from '../../../assets/message.json';
 
 const Contact = () => {
     return (
-        <div className='mx-12 mb-5'>
-            <h2 className='text-center my-5 font-semibold text-4xl'>Contact US</h2>
+        <div className='mx-5 md:mx-12 mb-5'>
+            <h2 className='text-center my-5 font-semibold text-2xl md:text-4xl'>Contact US</h2>
             <div className='grid md:grid-cols-2 gap-3'>
                 <div className='border border-gray-300 p-4 rounded-lg'>
                     <div className='flex gap-3'>
