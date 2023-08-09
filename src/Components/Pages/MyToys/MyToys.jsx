@@ -56,6 +56,7 @@ const MyToys = () => {
 
     const handleUpdate = (id) => {
         console.log(id);
+        
     }
 
     return (

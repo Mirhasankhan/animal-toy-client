@@ -1,9 +1,9 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Slider from "./Slider";
-import image1 from '../../../assets/image-1.webp'
-import image2 from '../../../assets/image-2.webp'
-import image3 from '../../../assets/image-4.webp'
+import image1 from '../../../assets/children-1.webp'
+import image2 from '../../../assets/children-2.webp'
+import image3 from '../../../assets/children-3.webp'
 import header1 from '../../../assets/header-1.json'
 import header2 from '../../../assets/header-2.json'
 import header3 from '../../../assets/header-3.json'

@@ -10,9 +10,9 @@ const SubCategories = ({ allToys }) => {
 
     return (
         <div>
-            <h1 className='text-center text-2xl md:text-4xl mb-8 mt-4 font-bold'>Watch different categories of toys</h1>
+            <h1 className='text-center text-2xl md:text-4xl my-12 font-bold'>Watch different categories of toys</h1>
             <Tabs className="mx-3 md:mx-12">
-                <TabList className="text-white justify-around flex gap-3 px-2 py-2">
+                <TabList className="md:w-2/3 mx-auto text-white justify-around bg-gray-100 my-3 md:my-6 flex gap-1">
                     <Tab className="tab-container" >Bike Toys</Tab>
                     <Tab className="tab-container" >Car Toys</Tab>
                     <Tab className="tab-container" >Architecture Toys </Tab>

@@ -7,13 +7,13 @@ body{
     font-family: 'Nunito', sans-serif;
   }
 .submit-button{
-    @apply bg-blue-800 text-white py-1 md:py-2 px-3 rounded-xl font-semibold hover:bg-purple-500;
+    @apply bg-sky-600 text-white py-1 px-3 rounded-md font-semibold hover:bg-purple-500;
 }
 .delete-button{
     @apply bg-purple-600 text-white py-1 px-3 rounded-md font-semibold;
 }
 .subscribe-button{
-    @apply bg-orange-600 text-white py-3 px-5 rounded-r-lg font-semibold hover:bg-purple-500;
+    @apply bg-orange-600 text-white py-1 px-5 rounded-lg font-semibold hover:bg-purple-500;
 }
 
 .nav-links{
@@ -24,7 +24,7 @@ body{
     @apply border-2 w-full lg:w-2/3 p-2 rounded-3xl bg-white text-black flex items-center
 }
 .tab-container{
-    @apply text-white font-bold text-xl p-3 rounded-2xl border-2 text-purple-400
+    @apply w-full font-bold text-xl p-3 bg-blue-400 border
 }
 
 .blog-container{

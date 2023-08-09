@@ -5,18 +5,17 @@ import Footer from '../Shared/Footer';
 import { firebaseProvider } from '../Providers/Provider';
 import Lottie from "lottie-react";
 import spinner from '../../assets/spinner.json'
-import Navbar from '../Shared/Navbar';
+
 
 const MainLayout = () => {
-    const {loading} = useContext(firebaseProvider)
-    return ( loading ? <div className='flex justify-center items-center'><Lottie style={{ height: '400px', width: '600px'}} animationData={spinner} loop={true} /> </div>:
+    const { loading } = useContext(firebaseProvider)
+    return (loading ? <div className='flex justify-center items-center'><Lottie style={{ height: '400px', width: '600px' }} animationData={spinner} loop={true} /> </div> :
         <div>
             <Header></Header>
             <div className='min-h-[calc(100vh-100px)]'>
-                <Outlet />
+                <Outlet />                
             </div>
-            {/* <Footer></Footer> */}
-            <Navbar/>
+            <Footer></Footer>
         </div>
     );
 };
