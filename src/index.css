@@ -7,7 +7,7 @@ body{
     font-family: 'Nunito', sans-serif;
   }
 .submit-button{
-    @apply bg-blue-800 text-white py-2 px-3 rounded-xl font-semibold hover:bg-purple-500;
+    @apply bg-blue-800 text-white py-1 md:py-2 px-3 rounded-xl font-semibold hover:bg-purple-500;
 }
 .delete-button{
     @apply bg-purple-600 text-white py-1 px-3 rounded-md font-semibold;

@@ -8,7 +8,7 @@ import 'animate.css';
 const AddToys = () => {
     useTitle('addToys')
     const { user } = useContext(firebaseProvider)
-    const [value, setValue] = useState('Plush Toys')
+    const [value, setValue] = useState('Bike Toy')
     const handleSelect = (e) => {
         setValue(e.target.value);
     }
@@ -79,14 +79,14 @@ const AddToys = () => {
                         </div>
                         <label className='font-medium' htmlFor="animal">Choose A Sub Category: </label>
                         <select className='p-1 rounded-md border-2 border-purple-600' name="animals" id="animals" onChange={handleSelect}>
-                            <option value="Plush Toys">Plush Toys</option>
-                            <option value="Animal Figures">Animal Figures</option>
-                            <option value="Interactive Pets">Interactive Pets</option>
+                            <option value="Bike Toy">Bike Toy</option>
+                            <option value="Car Toy">Car Toy</option>
+                            <option value="Architecture Toy">Architecture Toy</option>
                         </select>
                     </div>
                 </div>
-                <div>
-                    <textarea className='border-2 w-full pl-3 rounded-lg py-2 mb-3' type="text" name='description' placeholder='Description' rows="5"></textarea>
+                <div className='mx-8'>
+                    <textarea className='border-2 w-full rounded-lg p-2 mb-3' type="text" name='description' placeholder='Description' rows="5"></textarea>
                     {/* <input className='border-2 w-full pl-3 rounded-lg py-2 mb-3' type="text" name='description' placeholder='Description' /> */}
                     <input className='submit-button w-full mb-3' type="submit" value="Add Toy" />
                 </div>

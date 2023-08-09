@@ -4,18 +4,18 @@ import 'react-tabs/style/react-tabs.css';
 import SubCategoryDetail from './SubCategoryDetail';
 
 const SubCategories = ({ allToys }) => {
-    const animalFigures = allToys.filter(bird => bird.subCategory == "Animal Figures")
-    const plushToy = allToys.filter(mammal => mammal.subCategory == "Plush Toys")
-    const interactivePets = allToys.filter(reptile => reptile.subCategory == "Interactive Pets")
+    const animalFigures = allToys.filter(bird => bird.subCategory == "Car Toy")
+    const plushToy = allToys.filter(mammal => mammal.subCategory == "Bike Toy")
+    const interactivePets = allToys.filter(reptile => reptile.subCategory == "Architecture Toy")
 
     return (
         <div>
             <h1 className='text-center text-2xl md:text-4xl mb-8 mt-4 font-bold'>Watch different categories of toys</h1>
             <Tabs className="mx-3 md:mx-12">
                 <TabList className="text-white justify-around flex gap-3 px-2 py-2">
-                    <Tab className="tab-container" >Plush Toys</Tab>
-                    <Tab className="tab-container" >Animal Figures</Tab>
-                    <Tab className="tab-container" >Interactive Toys </Tab>
+                    <Tab className="tab-container" >Bike Toys</Tab>
+                    <Tab className="tab-container" >Car Toys</Tab>
+                    <Tab className="tab-container" >Architecture Toys </Tab>
                 </TabList>
                 <TabPanel className="w-full">
                     <div className='grid grid-cols-2 md:grid-cols-3 gap-1 lg:gap-7'>

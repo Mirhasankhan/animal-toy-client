@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import logo from '../../assets/logo.png';
 import { NavLink } from 'react-router-dom';
 import { firebaseProvider } from '../Providers/Provider';
 import { FaBars } from 'react-icons/fa';
@@ -12,15 +11,15 @@ const Header = () => {
 
     const handleLogout = () => {
         logOut()
-            .then(result => { })
-            .catch(error => { })
+            .then(() => {})
+            .catch(() => {})
     }
 
     return (
         <div className="z-10 navbar  sticky top-0 bg-white md:px-8">
             <div className="navbar-start">
                 <div className='flex items-center'>
-                    <img className='h-12 w-12 md:h-16 md:w-16 rounded-full mr-1 md:mr-3' src={logo} alt="" />
+                    <img className='h-12 w-12 md:h-16 md:w-16 rounded-full mr-1 md:mr-3' src="/toy.jpg" alt="" />
                     <div>
                         <h1 className='font-bold md:text-2xl'>Toy<span className='text-blue-600'>Emporium</span></h1>
                         <p className='text-sm italic'>We are the best</p>

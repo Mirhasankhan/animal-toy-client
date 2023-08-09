@@ -5,6 +5,7 @@ import Footer from '../Shared/Footer';
 import { firebaseProvider } from '../Providers/Provider';
 import Lottie from "lottie-react";
 import spinner from '../../assets/spinner.json'
+import Navbar from '../Shared/Navbar';
 
 const MainLayout = () => {
     const {loading} = useContext(firebaseProvider)
@@ -14,7 +15,8 @@ const MainLayout = () => {
             <div className='min-h-[calc(100vh-100px)]'>
                 <Outlet />
             </div>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
+            <Navbar/>
         </div>
     );
 };

@@ -61,9 +61,9 @@ const ToyDetails = () => {
                     </div>
                 </div>
             </div> */}
-            <div className='md:w-2/3 md:mx-auto mx-3 shadow-lg grid grid-cols-2 border border-gray-200 p-4 rounded-lg'>
+            <div className='md:w-2/3 md:mx-auto mx-3 shadow-lg grid grid-cols-2 gap-3 border border-gray-200 p-4 rounded-lg'>
                 <div className='flex items-center'>
-                    <img className='h-64 md:h-80' src={photo} alt="" />
+                    <img className='h-64 md:h-80 rounded-md' src={photo} alt="" />
                 </div>
                 <div>
                     <h2 className="card-title">{toy}</h2>

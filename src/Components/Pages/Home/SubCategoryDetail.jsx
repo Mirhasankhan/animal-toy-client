@@ -8,9 +8,9 @@ const SubCategoryDetail = ({ children }) => {
 
     const { _id, price, photo, toy, rating, seller } = children;
     return (
-        <div data-aos="zoom-in" data-aos-duration="2000" className='grid md:grid-cols-2 border border-gray-200 p-4 rounded-lg'>
+        <div data-aos="zoom-in" data-aos-duration="2000" className='grid md:grid-cols-2 gap-2 border border-gray-200 p-4 rounded-lg'>
             <div className='flex items-center'>
-                <img className='w-32 md:w-42' src={photo} alt="" />
+                <img className='w-full h-full rounded-md' src={photo} alt="" />
             </div>
             <div>
                 <div className="flex gap-2 mt-auto">
